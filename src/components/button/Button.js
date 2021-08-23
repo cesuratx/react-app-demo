@@ -8,7 +8,7 @@ export default function Button(){
      const initialState = "";
 
   useEffect(() => {
-    console.log(input.join("")); // join to string
+    console.log(input.join("")); // join to string    
   }, [input]);
 
   const handleClick = (e) => {
@@ -18,16 +18,11 @@ export default function Button(){
   };
 
   const handleSubmit = (e) => {
-     e.preventDefault();
      let value = e.target.value;
-     setInput([...input, value]);
      alert(value)
-     clearState();
+     setInput([...initialState])
    };
-
-   const clearState = () => {
-       setInput([...initialState])
-   }
+   
 
     return(
      <div>
