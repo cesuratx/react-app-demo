@@ -19,11 +19,13 @@ export default function Button(){
   
   const handleSubmit = (e) => {
      let value = e.target.value;
-     alert(value)
+     //you should sent this array to corresponding endpoint
      setInput([...initialState])
    };
       
     return(
+      <>
+      {input.length > 0 && <div className='display'>{input}{ }</div>}
      <div className='nums'> 
      <button className='num' value='1' onClick={handleClick}>1</button>
      <button className='num' value='2' onClick={handleClick}>2</button>
@@ -76,6 +78,7 @@ export default function Button(){
      <button className='submit' value={input} onClick={handleSubmit}>Submit</button>
 
      </div>
+     </>
     )
     
 }
