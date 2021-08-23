@@ -5,9 +5,6 @@ import './Button.css'
 export default function Button(){
 
      const [input, setInput] = useState([]); // store as array
-     const [color,setColor] = useState('rgb(88, 98, 156)');
-     const [isClicked, setClicked] = useState(false);
-
      const initialState = "";
 
   useEffect(() => {
@@ -19,22 +16,16 @@ export default function Button(){
     const value = e.target.value;
     setInput([...input, value]);
   };
-  const handleColor = (e) => {
-    setClicked(true)
-    setColor(isClicked ? 'red' : 'green')
-  };
-
-
+  
   const handleSubmit = (e) => {
      let value = e.target.value;
      alert(value)
      setInput([...initialState])
-     setColor("")
    };
       
     return(
      <div className='nums'> 
-     <button className='num' disabled={isClicked} value='1' onChange={handleColor} onClick={handleClick}>1</button>
+     <button className='num' value='1' onClick={handleClick}>1</button>
      <button className='num' value='2' onClick={handleClick}>2</button>
      <button className='num' value='3' onClick={handleClick}>3</button>
      <button className='num' value='4' onClick={handleClick}>4</button>
@@ -78,10 +69,10 @@ export default function Button(){
      <button className='num' value='42' onClick={handleClick}>42</button>
      <button className='num' value='43' onClick={handleClick}>43</button>
      <button className='num' value='44' onClick={handleClick}>44</button>
-     <button style={{background:color}} className='num' value='45' onClick={handleClick}>45</button>
-     <button style={{background:color}} className='num' value='46' onClick={handleClick}>46</button>
-     <button style={{background:color}} className='num' value='47' onClick={handleClick}>47</button>
-     <button style={{background:color}} className='num' value='48' onClick={handleClick}>48</button>   
+     <button className='num' value='45' onClick={handleClick}>45</button>
+     <button className='num' value='46' onClick={handleClick}>46</button>
+     <button className='num' value='47' onClick={handleClick}>47</button>
+     <button className='num' value='48' onClick={handleClick}>48</button>   
      <button className='submit' value={input} onClick={handleSubmit}>Submit</button>
 
      </div>
